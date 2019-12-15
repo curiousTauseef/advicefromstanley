@@ -2,7 +2,7 @@
 
 var myLink = document.getElementById('clickMe');
 
-myLink.onclick = doFunction(){
+myLink.onclick = function doFunction(){
 
 	 alert('hello!');
 
