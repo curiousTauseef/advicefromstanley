@@ -61,18 +61,19 @@
 				<h3>PROJECT NAME</h3>
 				<hr>
 				<p>Lets get a quote...</p>
-				    <form action="http://foo.com" method="post">
-      <div>
-        <label for="say">What greeting do you want to say?</label>
-        <input name="say" id="say" value="Hi">
-      </div>
-      <div>
-        <label for="to">Who do you want to say it to?</label>
-        <input name="to" value="Mom">
-      </div>
+				    <form action="http://api.forismatic.com/api/1.0/" method=method=getQuote&key=457653&format=xml&lang=en>
       <div>
         <button>Send my greetings</button>
       </div>
+
+	  <forismatic>
+<quote>
+<quoteText>Brevity — the soul of wit</quoteText>
+<quoteAuthor></quoteAuthor>
+<senderName>name or nickname of the quote sender</senderName>
+<senderLink>email or website address of the quote sender</senderLink>
+</quote>
+</forismatic>
 </form>
 
 
