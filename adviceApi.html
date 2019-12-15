@@ -62,7 +62,7 @@
 				<h3>PROJECT NAME</h3>
 				<hr>
 				<p>Lets get a quote...</p>
-				    <form action="http://api.forismatic.com/api/1.0/" method=method=getQuote&key=457653&format=xml&lang=en>
+				    <form action="http://api.forismatic.com/api/1.0/" method=method=getQuote&key=457653&format=jsonp&jsonp=parseQuote&lang=en>
       <div>
         <button>Send my greetings</button>
       </div>
@@ -79,7 +79,7 @@
 
 <div id="chgtext">This is my current text</div>
 
-<a href="#" onclick="changeText('Change the text using javascript')">Change text</a> &nbsp; &nbsp;
+<a href="#" onclick="changeText($quote)">Change text</a> &nbsp; &nbsp;
 <a href="#" onclick="changeText('Text will be changed based on the other text')">Change text2</a>&nbsp;  &nbsp;
 <a href="#" onclick="changeText('This is another sample changed text on click the onther text')">Change text3</a>&nbsp;  &nbsp;
 </form>
