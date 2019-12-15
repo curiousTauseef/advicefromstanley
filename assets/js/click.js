@@ -1,2 +1,2 @@
 //- Using an anonymous function:
-document.getElementById("clickMe").onclick = function () { alert('hello!'); };
+document.getElementById("clickMe").onclick = doFunction () { alert('hello!'); };
