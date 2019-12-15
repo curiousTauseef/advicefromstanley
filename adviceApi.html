@@ -20,6 +20,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/hover.zoom.js"></script>
     <script src="assets/js/hover.zoom.conf.js"></script>
+    <script src="assets/js/advice.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -76,11 +77,11 @@
 </forismatic>
 
 
- <div id="chgtext">This is my current text</div>
-    <a href="#" onclick="document.getElementById('chgtext').innerHTML='Change the text using javascript';">Change text</a> &nbsp; &nbsp;
-    <a href="#" onclick="document.getElementById('chgtext').innerHTML='Text will be changed based on the other text';">Change text2</a>&nbsp;  &nbsp;
-    <a href="#" onclick="document.getElementById('chgtext').innerHTML='This is another sample changed text on click the onther text';">Change text3</a>&nbsp;  &nbsp;
-    </div>
+<div id="chgtext">This is my current text</div>
+
+<a href="#" onclick="changeText('Change the text using javascript')">Change text</a> &nbsp; &nbsp;
+<a href="#" onclick="changeText('Text will be changed based on the other text')">Change text2</a>&nbsp;  &nbsp;
+<a href="#" onclick="changeText('This is another sample changed text on click the onther text')">Change text3</a>&nbsp;  &nbsp;
 </form>
 
 
