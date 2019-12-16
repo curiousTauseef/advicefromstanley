@@ -1,5 +1,8 @@
 <script type="text/javascript">
 
+  $(document).ready(function() {
+
+
         document.getElementById('fetchUserDataBtn').addEventListener('click', fetchUserData);
 
 		if(document.getElementById('fetchUserDataBtn') !== null) { 
@@ -21,4 +24,14 @@
                 });
         }
 }
+
+
+
+  });
+
+
+
+
+
+
 </script>
