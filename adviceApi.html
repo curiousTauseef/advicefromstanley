@@ -20,9 +20,12 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/hover.zoom.js"></script>
     <script src="assets/js/hover.zoom.conf.js"></script>
-    <script src="assets/js/advice.js"></script>
-    <script src="assets/js/postParams.js"></script>
-    <script src="assets/js/click.js"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/quoteEzioda.css" />
+    <link href="https://fonts.googleapis.com/css?family=Alegreya:400,500" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+    <script src="assets/js/quoteEzioda.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -63,59 +66,29 @@
 			<div class="col-lg-6 col-lg-offset-3 centered">
 				<h3>PROJECT NAME</h3>
 				<hr>
-				<p>Lets get a quote...</p>
-				    <form action="http://api.forismatic.com/api/1.0/" method=method=getQuote&key=457653&format=jsonp&jsonp=parseQuote&lang=en>
-      <div>
-        <button>Send my greetings</button>
-      </div>
+				<p>Lets get a quote by EZIODA way[https://github.com/ezioda004/randomQuoteGenerator]...</p>
 
-
-	  echo "Trying to get author"
-	  echo $author
-
-
-				<p>Using a button to alert users</p>
-<input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
-
-
-
-
-<div id="chgtext">This is my current text</div>
-
-<a href="#" onclick="changeText($quote)">Change text</a> &nbsp; &nbsp;
-<a href="#" onclick="changeText('Text will be changed based on the other text')">Change text2</a>&nbsp;  &nbsp;
-<a href="#" onclick="changeText('This is another sample changed text on click the onther text')">Change text3</a>&nbsp;  &nbsp;
+				<div>
+				<p id = "quote"><i class="fas fa-quote-left fa-lg fa-spin"></i></p>
+				<p id = "author"></p>
+				<button id = "btn">New quote</button>
+				<a id = "tweet" href="#"><i class="fab fa-twitter-square fa-lg"></i></a>
+				<a id = "share" href="#"><i class="fab fa-facebook-square fa-lg"></i></a>
+				</div>
+				<footer>
+				<p>by ezioda004</p>
+				<p>API by Forsimatic</p>
+				</footer>
 
 
 
-				<p>Another way...</p>
 
-				<script src="assets/js/scripts.js"></script>
-
-
-								<p>Another way...</p>
-
-				<script src="assets/js/postParams.js"></script>
-</form>
 
 
 
 			</div>
 		</div>
 
-		<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-  </div>
-</div>
 
 	</div><!-- /container -->
 	
