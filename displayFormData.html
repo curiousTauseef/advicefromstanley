@@ -20,12 +20,37 @@
 
 
     <!-- https://stackoverflow.com/questions/42541980/display-submitted-form-data-on-same-page?noredirect=1&lq=1 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
-	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
     <script src="assets/js/hover.zoom.js"></script>
     <script src="assets/js/hover.zoom.conf.js"></script>
-    <script src="assets/js/dispForm.js"></script>
+
+	<!-- script src="assets/js/dispForm.js"></script>  -->
+
+
+	<script type="text/JavaScript">
+
+$(function() {
+    $("#signup").validate();
+
+    $("#signup").submit(function(e) {
+        e.preventDefault();
+
+
+        var display =
+        $("#name").val() + " " +
+        $("#theage").val() + " " +
+        $("#theemail").val();
+
+
+        $("#result").html(display);
+    });
+});
+
+</script>
+
+
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
