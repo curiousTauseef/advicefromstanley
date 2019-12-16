@@ -2,6 +2,7 @@
 
         document.getElementById('fetchUserDataBtn').addEventListener('click', fetchUserData);
 
+		if(document.getElementById('fetchUserDataBtn') !== null) { 
         function fetchUserData(){
             fetch('https://jsonplaceholder.typicode.com/users/')
                 .then(response => response.json())
