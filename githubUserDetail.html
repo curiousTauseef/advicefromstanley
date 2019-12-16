@@ -26,6 +26,14 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
+
+	    <script type="text/JavaScript">
+        function showMessage(){
+            var message = document.getElementById("message").value;
+            display_message.innerHTML= message;
+        }
+      	</script>
   </head>
 
   <body>
@@ -62,6 +70,13 @@
 				<hr>
 				<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
 
+				<p>Simple way to display html form values in same page after submit. [https://stackoverflow.com/questions/15447889/display-html-form-values-in-same-page-after-submit]</p>
+				Enter message: <input type="text" id = "message">
+				<input type="submit" onclick="showMessage()" value="submit" />
+				<p> Message is: <span id = "display_message"></span> </p>
+
+
+
 <form  id="postData">
         <div>
             <input type="text" name="" id="tittle">
@@ -73,10 +88,7 @@
     </form>
 
 
-				<p>Simple way to display html form values in same page after submit. [https://stackoverflow.com/questions/15447889/display-html-form-values-in-same-page-after-submit]</p>
-				Enter message: <input type="text" id = "message">
-				<input type="submit" onclick="showMessage()" value="submit" />
-				<p> Message is: <span id = "display_message"></span> </p>
+
 
 
 
