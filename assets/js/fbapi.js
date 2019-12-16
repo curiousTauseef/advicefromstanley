@@ -4,8 +4,4 @@ window.onload = function showMessage(){
             display_message.innerHTML= message;
 
 }
-
-
-
-
 </script>
