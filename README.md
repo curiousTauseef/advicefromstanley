@@ -24,6 +24,13 @@ SOF
 
 Exploring Public APIs :
 1. https://dev.to/camerenisonfire/10-intriguing-public-rest-apis-for-your-next-project-2gbd
+2. https://github.com/APIs-guru/graphql-apis
+3. https://github.com/serhii-londar/GithubAPI
+4. https://github.com/tableau/rest-api-samples/tree/master/python
+5. https://github.com/Marketo/REST-Sample-Code
+6. https://github.com/artur-stepien/wargaming-papi
+7. https://github.com/github/platform-samples
+8. 
 
 GET and POST
 1. https://stackoverflow.com/questions/3477333/what-is-the-difference-between-post-and-get
