@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>STANLEY - Free Bootstrap Theme </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/hover.zoom.js"></script>
+    <script src="assets/js/hover.zoom.conf.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">STANLEY</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+	
+	<!-- +++++ Projects Section +++++ -->
+	
+	<div class="container pt">
+		<div class="row mt">
+			<div class="col-lg-6 col-lg-offset-3 centered">
+				<h3>PROJECT NAME</h3>
+				<hr>
+				<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+			</div>
+		</div>
+
+    <p>YouTube Data API Quickstart</p>
+
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize-button" style="display: none;">Authorize</button>
+    <button id="signout-button" style="display: none;">Sign Out</button>
+
+    <pre id="content"></pre>
+
+
+
+
+
+
+	</div><!-- /container -->
+	
+	
+	<!-- +++++ Footer Section +++++ -->
+	
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>My Bunker</h4>
+					<p>
+						Some Address 987,<br/>
+						+34 9054 5455, <br/>
+						Madrid, Spain.
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="#">Dribbble</a><br/>
+						<a href="#">Twitter</a><br/>
+						<a href="#">Facebook</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+				
+				<div class="col-lg-4">
+					<h4>About Stanley</h4>
+					<p>This cute theme was created to showcase your work in a simple way. Use it wisely.</p>
+				</div><!-- /col-lg-4 -->
+			
+			</div>
+		
+		</div>
+	</div>
+	
+
+    <script type="text/javascript">
+      // Client ID and API key from the Developer Console
+      var CLIENT_ID = '<YOUR_CLIENT_ID>';
+
+      // Array of API discovery doc URLs for APIs used by the quickstart
+      var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"];
+
+      // Authorization scopes required by the API. If using multiple scopes,
+      // separated them with spaces.
+      var SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
+
+      var authorizeButton = document.getElementById('authorize-button');
+      var signoutButton = document.getElementById('signout-button');
+
+      /**
+       *  On load, called to load the auth2 library and API client library.
+       */
+      function handleClientLoad() {
+        gapi.load('client:auth2', initClient);
+      }
+
+      /**
+       *  Initializes the API client library and sets up sign-in state
+       *  listeners.
+       */
+      function initClient() {
+        gapi.client.init({
+          discoveryDocs: DISCOVERY_DOCS,
+          clientId: CLIENT_ID,
+          scope: SCOPES
+        }).then(function () {
+          // Listen for sign-in state changes.
+          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+          // Handle the initial sign-in state.
+          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          authorizeButton.onclick = handleAuthClick;
+          signoutButton.onclick = handleSignoutClick;
+        });
+      }
+
+      /**
+       *  Called when the signed in status changes, to update the UI
+       *  appropriately. After a sign-in, the API is called.
+       */
+      function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+          authorizeButton.style.display = 'none';
+          signoutButton.style.display = 'block';
+          getChannel();
+        } else {
+          authorizeButton.style.display = 'block';
+          signoutButton.style.display = 'none';
+        }
+      }
+
+      /**
+       *  Sign in the user upon button click.
+       */
+      function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
+      }
+
+      /**
+       *  Sign out the user upon button click.
+       */
+      function handleSignoutClick(event) {
+        gapi.auth2.getAuthInstance().signOut();
+      }
+
+      /**
+       * Append text to a pre element in the body, adding the given message
+       * to a text node in that element. Used to display info from API response.
+       *
+       * @param {string} message Text to be placed in pre element.
+       */
+      function appendPre(message) {
+        var pre = document.getElementById('content');
+        var textContent = document.createTextNode(message + '\n');
+        pre.appendChild(textContent);
+      }
+
+      /**
+       * Print files.
+       */
+      function getChannel() {
+        gapi.client.youtube.channels.list({
+          'part': 'snippet,contentDetails,statistics',
+          'forUsername': 'GoogleDevelopers'
+        }).then(function(response) {
+          var channel = response.result.items[0];
+          appendPre('This channel\'s ID is ' + channel.id + '. ' +
+                    'Its title is \'' + channel.snippet.title + ', ' +
+                    'and it has ' + channel.statistics.viewCount + ' views.');
+        });
+      }
+
+    </script>
+
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
