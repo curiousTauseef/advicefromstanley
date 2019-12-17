@@ -123,6 +123,59 @@ $(function() {
 		</div> 
 
 
+				<p>Lets verify gapi client first (with pure JS code)</p>
+
+				<script>
+// Let's load the JS Client library. I do it using a script tag, in the upper pane.
+// You could download it as a file and include in your project.
+
+
+// Verify that Google API JS Client library is loaded. 'gapi' is the Object created at
+// the global level. 
+console.log('Is gapi available', gapi !== undefined);
+console.log(gapi);
+
+// To begine interacting with any Google API, we need an API Key!
+
+var apiKey = 'zjW3zmGNnabVBn5hghYUrjEf';
+
+// With an API key, we can now perform requests. Yay!
+
+// Register the Api Key with the client library. The client library will use this key when making requests on your behalf.
+
+gapi.client.setApiKey(apiKey);
+
+// It's time to interact with the YouTube Api. The Google client JS library is meant to be used with all Google client Apis. So we need to load youtube API. We also can specify a version of the API. To do this, we will use gapi.client.load(). You can only load the library correctly, if your key is valid. Otherwise, a 400 Bad Request error is thrown.
+
+gapi.client.load('youtube', 'v3');
+
+//If no error is thrown, then we can observe the YouTube resources.
+console.log('Youtube API', gapi.client.youtube);
+
+// Wait, holdon. I see an undefined. The reaosn is an Asynchronous JavaScript call has been made to load the youtube api. When the call finishes. Then only we can see it. The load call gives us back a promise object. 
+
+var result = gapi.client.load('youtube', 'v3');
+console.log('Promise', result);
+
+// We can pass in a function to the then method. Like so.
+
+gapi.client.load('youtube', 'v3').then(function viewYoutubeResources(){  
+    console.log('Yay! Youtube API has loaded'); 
+
+});
+
+// Callbacks are supported as well.
+
+gapi.client.load('youtube', 'v3', function (){  
+    console.log('Callbacks are supported with the load function'); 
+
+});
+
+				</script>
+
+
+
+
 				<p>Code from https://developers.google.com/youtube/v3/code_samples/code_snippets?apix=true</p>
 
 
@@ -184,7 +237,7 @@ $(function() {
               function(err) { console.error("Error signing in", err); });
   }
   function loadClient() {
-    gapi.client.setApiKey("YOUR_API_KEY");
+    gapi.client.setApiKey("zjW3zmGNnabVBn5hghYUrjEf");
     return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
         .then(function() { console.log("GAPI client loaded for API"); },
               function(err) { console.error("Error loading GAPI client for API", err); });
