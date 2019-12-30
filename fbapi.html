@@ -119,10 +119,10 @@
 
           window.fbAsyncInit = function() {
             FB.init({
-              appId      : '{462799731072385}',
+              appId      : '462799731072385',
               cookie     : true,
               xfbml      : true,
-              version    : '{v5.0}'
+              version    : 'v5.0'
             });
               
             FB.AppEvents.logPageView();   
@@ -190,6 +190,21 @@
     </script>
     <!-- ENDBLOCK: Your script playground -->
 
+
+	<!-- START stuff from https://codesamplez.com/development/access-facebook-graph-api-using-javascript-sdk -->
+<button name="my_full_name" onclick="ShowMyName()" value="My Name" />
+<script language="javascript" type="text/javascript">
+function ShowMyName() {
+        FB.api("/me",
+                function (response) {
+                    alert('Name is ' + response.name);
+                });
+         
+    }
+</script>
+
+
+	<!-- END stuff from https://codesamplez.com/development/access-facebook-graph-api-using-javascript-sdk -->
 
 
 			
