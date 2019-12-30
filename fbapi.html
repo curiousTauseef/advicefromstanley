@@ -189,6 +189,22 @@
 
 
 
+		<div class="row mt">
+			<div class="col-lg-6 col-lg-offset-3 centered">
+				<h3>PROJECT NAME</h3>
+				<hr>
+				<p>Display FB user on console.</p>
+
+				<button id="fbconsole1">click me</button>
+			
+			
+			</div>
+		</div>
+
+
+
+
+
 
 		<div class="row mt">
 			<div class="col-lg-6 col-lg-offset-3 centered">
@@ -197,8 +213,8 @@
 				<p>Try to get the name of currently logged in Facebook user.</p>
 
 	<!-- START stuff from https://codesamplez.com/development/access-facebook-graph-api-using-javascript-sdk -->
-<button name="my_full_name" onclick="ShowMyName()" value="My Name" />
-<script language="javascript" type="text/javascript">
+
+	<script language="javascript" type="text/javascript">
 function ShowMyName() {
         FB.api("/me",
                 function (response) {
@@ -207,6 +223,9 @@ function ShowMyName() {
          
     }
 </script>
+
+<button name="my_full_name" onclick="ShowMyName()" value="My Name" />
+
 
 
 	<!-- END stuff from https://codesamplez.com/development/access-facebook-graph-api-using-javascript-sdk -->
@@ -271,6 +290,7 @@ function ShowMyName() {
 
 	<script src="assets/js/fbapi.js"></script>
     <script src="assets/js/domready1.js"></script>
+    <script src="assets/js/fbuserConsoleDisp.js"></script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
