@@ -203,7 +203,8 @@
                     //const outputDiv = document.getElementById('output');
 
     FB.api('/me?fields=name,picture', function(response) {
-      Log.info('API response', response);
+	  console.log("Fb response for pic");
+      console.log(response);
       document.getElementById('output').innerHTML = ('<img src="' + response.picture.data.url + '"> ' + response.name);
     });
 
