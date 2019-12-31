@@ -30,10 +30,21 @@
     <![endif]-->
 
 
+
+	  <!-- use advice from https://developers.facebook.com/docs/javascript/quickstart -->
+	  <!--script async defer src="https://connect.facebook.net/en_US/sdk.js"></script> -->
+  </head>
+
+  <body>
+
+
 	<!-- Use hint from answer at https://stackoverflow.com/questions/13580396/how-to-login-using-facebook-account -->
-	        <script>
+	<!-- Use hint from answer at https://developers.facebook.com/docs/facebook-login/web -->
+	<script>
       // This is called with the results from from FB.getLoginStatus().
       function statusChangeCallback(response) {
+		console.log('statusChangeCallback');
+
         console.log(response);
         // The response object is returned with a status field that lets the
         // app know the current login status of the person.
@@ -42,6 +53,7 @@
         if (response.status === 'connected') {
           // Logged into your app and Facebook.
           console.log(response.status);
+		  console.log('The person is logged into Facebook, and has logged into your webpage.');
           testAPI();
         } else if (response.status === 'not_authorized') {
           // The person is logged into Facebook, but not your app.
@@ -51,6 +63,8 @@
           // The person is not logged into Facebook, so we're not sure if
           // they are logged into this app or not.
           console.log(response.status);
+          document.getElementById('status').innerHTML = 'Please log ' + 'into this webpage.';
+
         }
       }
 
@@ -59,7 +73,7 @@
       // code below.
       function checkLoginState() {
           console.log("btn press, call fn to check state");
-        FB.getLoginStatus(function(response) {
+          FB.getLoginStatus(function(response) {
           statusChangeCallback(response);
         });
       }
@@ -105,6 +119,15 @@
       };
 
 
+  (function(d, s, id) {                      // Load the SDK asynchronously
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+
 
       // Here we run a very simple test of the Graph API after login is
       // successful.  See statusChangeCallback() for when this call is made.
@@ -120,11 +143,13 @@
       }
       </script>
 
-	  <!-- use advice from https://developers.facebook.com/docs/javascript/quickstart -->
-	  <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
-  </head>
 
-  <body>
+
+
+
+
+
+
 
     <!-- Static navbar -->
     <div class="navbar navbar-inverse navbar-static-top">
@@ -158,10 +183,12 @@
 				<hr>
 				<p>SOF suggestion to display a FB login</p>
 
+
 				<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                </fb:login-button>
+				</fb:login-button>
 
-
+				<div id="status">
+				</div>
 
 
 
