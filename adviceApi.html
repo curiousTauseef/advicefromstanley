@@ -184,7 +184,7 @@
 				<p>SOF suggestion to display a FB login</p>
 
 
-				<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+				<fb:login-button scope="public_profile,email" data-scope="user_likes" data-max-rows="1" data-size="medium" onlogin="checkLoginState();">
 				</fb:login-button>
 
 				<div id="status">
@@ -213,6 +213,29 @@
                     //outputDiv.textContent = html;
                   }
 				</script>
+
+
+				<hr>
+				<p>Display page likes</p>
+				<div id="likesResponse" class="btn btn-success" style="padding-top: 20px">Click here to show some of your Page likes (the API request might take a few seconds).</div>
+
+                 <ul id="userLikes"></ul>
+
+<script>
+document.getElementById('likesResponse').onclick = function() {
+  FB.api('/me/likes', function(response) {
+    //Log.info('API response', response);
+    var list = document.getElementById('userLikes');
+    for (var i=0; i < response.data.length; i++) {
+      var li = document.createElement('li');
+      li.innerHTML = response.data[i].name;
+      list.appendChild(li);
+    }
+  });
+}
+</script>
+
+
 
 
 			</div>
