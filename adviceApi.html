@@ -191,7 +191,27 @@
 				</div>
 
 
+				<hr>
+				<p>Display profile picture</p>
+				<button onClick="go()">Go</button>
+                <div id="output"></div>
 
+
+				<script type="text/javascript">
+                    function go() {
+                    //const fileInput = document.getElementById('file');
+                    //const outputDiv = document.getElementById('output');
+
+    FB.api('/me?fields=name,picture', function(response) {
+      Log.info('API response', response);
+      document.getElementById('output').innerHTML = ('<img src="' + response.picture.data.url + '"> ' + response.name);
+    });
+
+                    //let html = '';
+                    //html += '<img src="images/' + file.name + '" />';
+                    //outputDiv.textContent = html;
+                  }
+				</script>
 
 
 			</div>
