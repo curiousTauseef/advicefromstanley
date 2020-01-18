@@ -234,6 +234,7 @@ document.getElementById('likesResponse').onclick = function() {
 				<hr>
 				<p>Display any post  likes</p>
 				<div id="postResponse" class="btn btn-success" style="padding-top: 20px">Click here to show likes for a post ID</div>
+                                <div id="postlikesoutput"></div>
 
 
 <script>
@@ -242,7 +243,7 @@ document.getElementById('postResponse').onclick = function() {
     //Log.info('API response', response);
 
                             console.log(response);
-                            document.getElementById('output').innerHTML = ('<img src="' + response.picture.data.url + '"> ' + response.name);
+                            document.getElementById('postlikesoutput').innerHTML = response.summary.total_count;
   });
 }
 </script>
