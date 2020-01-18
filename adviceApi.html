@@ -249,6 +249,26 @@ document.getElementById('postResponse').onclick = function() {
 </script>
 
 
+				<hr>
+				<p>Display birthday and email of logged in user</p>
+				<div id="beResp" class="btn btn-success" style="padding-top: 20px">Click here to show bday and email info</div>
+                                <div id="biInfo"></div>
+                                <div id="emInfo"></div>
+
+
+<script>
+document.getElementById('beResp').onclick = function() {
+  FB.api('/2844230095628128/?fields=id,name,birthday,email', function(response) {
+    //Log.info('API response', response);
+
+                            console.log(response);
+                            document.getElementById('biInfo').innerHTML = response.birthday;
+                            document.getElementById('emInfo').innerHTML = response.email;
+  });
+}
+</script>
+
+
 			</div>
 		</div>
 
