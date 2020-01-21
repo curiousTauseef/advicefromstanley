@@ -74,6 +74,9 @@
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
                 console.log("Response", response);
+
+                var str = JSON.stringify(response.result);
+                $('#playlist-search-container').html('<pre>' + str + '</pre>');
               },
               function(err) { console.error("Execute error", err); });
   }
@@ -144,6 +147,8 @@ Enter message: <input type="text" id = "message">
 
 <button onclick="authenticate().then(loadClient)">authorize and load</button>
 <button onclick="execute()">execute</button>
+    <div id="playlist-search-container">
+    </div>
 
 
 
