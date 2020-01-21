@@ -74,8 +74,13 @@
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
                 console.log("Response", response);
+                console.log("No of playlists", response.result.pageInfo.totalResults);
+
+
+
 
                 var str = JSON.stringify(response.result);
+
                 $('#playlist-search-container').html('<pre>' + str + '</pre>');
               },
               function(err) { console.error("Execute error", err); });
@@ -150,7 +155,12 @@ Enter message: <input type="text" id = "message">
     <div id="playlist-search-container">
     </div>
 
+<!-- 
+<p id="nrPlaylists" onclick="calcPlaylists()">Display total number of playlists.</p>
+<button onclick="calcPlaylists()">Show total number of playlists</button>
+<p> Message is: <span id = "display_message"></span> </p>
 
+-->
 
 			</div>
 		</div>
