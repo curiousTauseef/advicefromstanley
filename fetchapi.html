@@ -90,9 +90,10 @@
 
 var neatList = [];
 
-//var plObj =  JSON.parse(response);
+var plObj =  JSON.parse(str);
 //received an error on console
-var plObj =  JSON.stringify(response);
+//var plObj =  JSON.stringify(response);
+
 for(var key in plObj){
     if (plObj.hasOwnProperty(key)){
         var value=plObj[key];
