@@ -95,9 +95,9 @@ var neatList = [];
 var plObj =  JSON.stringify(response);
 for(var key in plObj){
     if (plObj.hasOwnProperty(key)){
-        var value=obj[key];
+        var value=plObj[key];
         // work with key and value
-        if (key == "title") {
+        if (key === "title") {
             neatList.push(value);
         }
     }
