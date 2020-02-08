@@ -49,7 +49,7 @@
 
            var data1 = '{"AboutToExpire":{"Display":true,"Message":"Several of your subscriptions are about to expire."},"Expired":{"Display":true,"Message":"Your McAfee WaveSecure - Tablet Edition subscription has expired and you’ve been without protection for 384 days."}}';
 
-           var data2 = '{'key1':{id: 'rr323',d: undefined,x: 560,y: 150},'key2':{id: 'rr231',d: undefined,x: 860,y: 90}}';
+          // var data2 = '{'key1':{id: 'rr323',d: undefined,x: 560,y: 150},'key2':{id: 'rr231',d: undefined,x: 860,y: 90}}';
 
            var obj = JSON.parse(data);
            for(var key in obj){
@@ -60,9 +60,9 @@
                }
            }
 
-           var obj = JSON.parse(data2);
+           //var obj = JSON.parse(data2);
            for(var key in obj){
-               if (key === "key2"){
+               if (key === "Expired"){
                    var value=obj[key];
                    // work with key and value
                 console.log("\nValue ", value);
