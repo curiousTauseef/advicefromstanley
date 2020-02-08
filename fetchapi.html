@@ -80,9 +80,31 @@
 
 
                // var str = JSON.stringify(response.result);
+
+//https://stackoverflow.com/questions/11359291/prettify-json-array-in-javascript
                 var str = JSON.stringify(response.result,null,'\t');
 
+
+//https://stackoverflow.com/questions/16862627/json-stringify-output-to-div-in-pretty-print-way
+//pre tells the browser engine that the content inside is pre-formatted and it can be displayed without any modification. So browser will not remove white spaces, new lines etc
+
+var neatList = [];
+
+var plObj =  JSON.parse(response);
+for(var key in plObj){
+    if (plObj.hasOwnProperty(key)){
+        var value=obj[key];
+        // work with key and value
+        if (key == "title") {
+            neatList.push(value);
+        }
+    }
+}
+
+
+
                 $('#playlist-search-container').html('<pre>' + str + '</pre>');
+                $('#pretty-Printed-Playlist-container').html('<pre>' + neatList + '</pre>');
               },
               function(err) { console.error("Execute error", err); });
   }
