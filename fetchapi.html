@@ -42,6 +42,28 @@
 </script>
 
 
+<script type="text/JavaScript">
+
+//https://stackoverflow.com/questions/9138959/parsing-json-dictionary-in-javascript-to-iterate-through-keys
+       function parseAndPrintKey(){
+
+           var data = '{"AboutToExpire":{"Display":true,"Message":"Several of your subscriptions are about to expire."},"Expired":{"Display":true,"Message":"Your McAfee WaveSecure - Tablet Edition subscription has expired and you’ve been without protection for 384 days."}}';
+
+           var obj = JSON.parse(data);
+           for(var key in obj){
+               if (obj.hasOwnProperty(key)){
+                   var value=obj[key];
+                   // work with key and value
+                console.log("\nValue ", value);
+               }
+           }
+
+
+        }
+
+</script>
+
+
 
 
 <script src="https://apis.google.com/js/api.js"></script>
@@ -174,6 +196,16 @@ Enter message: <input type="text" id = "message">
     </div>
     <hr>
 					<p> Message is: <span id = "display_message"></span> </p>
+
+
+    <div>
+        <h1>Parsing and printing key value pairs</h1>
+							<p>Using JS to parse a JSON and print key value pairs. see effect on console.[https://stackoverflow.com/questions/9138959/parsing-json-dictionary-in-javascript-to-iterate-through-keys]</p>
+				
+				<input type="submit" onclick="parseAndPrintKey()" value="submit" />
+    </div>
+
+
 
 
     <div>
