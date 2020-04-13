@@ -209,7 +209,7 @@
 			</script>
 
 				<hr>
-				<p>Display page likes</p>
+				<p>Display page likes (Internally obtains number of page likes as a LIST and displays the LIST. Uses 'me' endpoint so must work for any user)</p>
 				<div id="likesResponse" class="btn btn-success" style="padding-top: 20px">Click here to show some of your Page likes (the API request might take a few seconds).</div>
 
                  <ul id="userLikes"></ul>
@@ -258,7 +258,9 @@ document.getElementById('postResponse').onclick = function() {
 
 <script>
 document.getElementById('beResp').onclick = function() {
-  FB.api('/2844230095628128/?fields=id,name,birthday,email', function(response) {
+
+	<!-- Earlier I used Tauseef FB ID 2844230095628128 now using me   -->
+  FB.api('/me?fields=id,name,birthday,email', function(response) {
     //Log.info('API response', response);
 
                             console.log(response);
