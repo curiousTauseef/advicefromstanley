@@ -172,9 +172,12 @@
 	
 	<div class="container pt">
 		<div class="row mt">
-			<div class="col-lg-6 col-lg-offset-3 centered">
 				<h3>PROJECT NAME</h3>
-				<hr>
+
+			<!-- Now put three columns as seen https://getbootstrap.com/docs/4.1/layout/grid/ -->
+			<div class="col-sm">
+             One of three columns
+	  		 <hr>
 				<p>SOF suggestion to display a FB login</p>
 
 
@@ -191,7 +194,7 @@
                                 <div id="output"></div>
 
 
-			<script type="text/javascript">
+  <script type="text/javascript">
                           function go() {
                           //const fileInput = document.getElementById('file');
                           //const outputDiv = document.getElementById('output');
@@ -206,10 +209,40 @@
                           //html += '<img src="images/' + file.name + '" />';
                           //outputDiv.textContent = html;
                         }
-			</script>
+  </script>
 
 				<hr>
-				<p>Display page likes (Internally obtains number of page likes as a LIST and displays the LIST. Uses 'me' endpoint so must work for any user)</p>
+
+            </div>
+            <div class="col-sm">
+             One of three columns
+	  				<hr>
+				<p>Display birthday and email of logged in user</p>
+				<div id="beResp" class="btn btn-success" style="padding-top: 20px">Click here to show bday and email info</div>
+                                <div id="biInfo"></div>
+                                <div id="emInfo"></div>
+
+
+  <script>
+                document.getElementById('beResp').onclick = function() {
+
+             	<!-- Earlier I used Tauseef FB ID 2844230095628128 now using me   -->
+                     FB.api('/me?fields=id,name,birthday,email', function(response) {
+                      //Log.info('API response', response);
+
+                            console.log(response);
+                            document.getElementById('biInfo').innerHTML = response.birthday;
+                            document.getElementById('emInfo').innerHTML = response.email;
+                  });
+                 }
+  </script>
+
+
+            </div>
+    <div class="col-sm">
+      One of three columns
+
+	  				<p>Display page likes (Internally obtains number of page likes as a LIST and displays the LIST. Uses 'me' endpoint so must work for any user)</p>
 				<div id="likesResponse" class="btn btn-success" style="padding-top: 20px">Click here to show some of your Page likes (the API request might take a few seconds).</div>
 
                  <ul id="userLikes"></ul>
@@ -248,31 +281,14 @@ document.getElementById('postResponse').onclick = function() {
 }
 </script>
 
-
-				<hr>
-				<p>Display birthday and email of logged in user</p>
-				<div id="beResp" class="btn btn-success" style="padding-top: 20px">Click here to show bday and email info</div>
-                                <div id="biInfo"></div>
-                                <div id="emInfo"></div>
+    </div>
+	<!-- End of 3 columns -->
 
 
-<script>
-document.getElementById('beResp').onclick = function() {
-
-	<!-- Earlier I used Tauseef FB ID 2844230095628128 now using me   -->
-  FB.api('/me?fields=id,name,birthday,email', function(response) {
-    //Log.info('API response', response);
-
-                            console.log(response);
-                            document.getElementById('biInfo').innerHTML = response.birthday;
-                            document.getElementById('emInfo').innerHTML = response.email;
-  });
-}
-</script>
 
 
-			</div>
-		</div>
+
+		</div><!-- /row -->
 
 
 	</div><!-- /container -->
