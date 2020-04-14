@@ -174,128 +174,17 @@
 	
 	<!-- +++++ Projects Section +++++ -->
 	
-	<div class="container">
-		<div class="row">
-				<h3>Facebook Graph API v5.0 Project</h3>
-
-			<!-- Now put three columns as seen https://getbootstrap.com/docs/4.1/layout/grid/ -->
-			<div class="col-sm">
-             One of three columns
-	  		 <hr>
-				<p>SOF suggestion to display a FB login</p>
-
-
-				<fb:login-button scope="public_profile,email" data-scope="user_likes" data-max-rows="1" data-size="medium" onlogin="checkLoginState();">
-				</fb:login-button>
-
-				<div id="status">
-				</div>
-
-
-				<hr>
-				<p>Display profile picture</p>
-				<button onClick="go()">Go</button>
-                                <div id="output"></div>
-
-
-  <script type="text/javascript">
-                          function go() {
-                          //const fileInput = document.getElementById('file');
-                          //const outputDiv = document.getElementById('output');
-
-                          FB.api('/me?fields=name,picture', function(response) {
-                      	  console.log("Fb response for pic");
-                            console.log(response);
-                            document.getElementById('output').innerHTML = ('<img src="' + response.picture.data.url + '"> ' + response.name);
-                          });
-
-                          //let html = '';
-                          //html += '<img src="images/' + file.name + '" />';
-                          //outputDiv.textContent = html;
-                        }
-  </script>
-
-				<hr>
-
-            </div>
-            <div class="col-sm">
-             One of three columns
-	  				<hr>
-				<p>Display birthday and email of logged in user</p>
-				<div id="beResp" class="btn btn-success" style="padding-top: 20px">Click here to show bday and email info</div>
-                                <div id="biInfo"></div>
-                                <div id="emInfo"></div>
-
-
-  <script>
-                document.getElementById('beResp').onclick = function() {
-
-             	<!-- Earlier I used Tauseef FB ID 2844230095628128 now using me   -->
-                     FB.api('/me?fields=id,name,birthday,email', function(response) {
-                      //Log.info('API response', response);
-
-                            console.log(response);
-                            document.getElementById('biInfo').innerHTML = response.birthday;
-                            document.getElementById('emInfo').innerHTML = response.email;
-                  });
-                 }
-  </script>
-
-
-            </div>
-    <div class="col-sm">
-      One of three columns
-
-	  				<p>Display page likes (Internally obtains number of page likes as a LIST and displays the LIST. Uses 'me' endpoint so must work for any user)</p>
-				<div id="likesResponse" class="btn btn-success" style="padding-top: 20px">Click here to show some of your Page likes (the API request might take a few seconds).</div>
-
-                 <ul id="userLikes"></ul>
-
-<script>
-document.getElementById('likesResponse').onclick = function() {
-  FB.api('/me/likes', function(response) {
-    //Log.info('API response', response);
-    var list = document.getElementById('userLikes');
-    for (var i=0; i < response.data.length; i++) {
-      var li = document.createElement('li');
-      li.innerHTML = response.data[i].name;
-      list.appendChild(li);
-    }
-  });
-}
-</script>
-
-
-
-
-				<hr>
-				<p>Display any post  likes</p>
-				<div id="postResponse" class="btn btn-success" style="padding-top: 20px">Click here to show likes for a post ID</div>
-                                <div id="postlikesoutput"></div>
-
-
-<script>
-document.getElementById('postResponse').onclick = function() {
-  FB.api('/2844230095628128_2878887508829053/likes?summary=true', function(response) {
-    //Log.info('API response', response);
-
-                            console.log(response);
-                            document.getElementById('postlikesoutput').innerHTML = response.summary.total_count;
-  });
-}
-</script>
-
+ <div class="container">
+  <h1>Hello World!</h1>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:yellow;">
+      <p>Lorem ipsum...</p>
     </div>
-	<!-- End of 3 columns -->
-
-
-
-
-
-		</div><!-- /row -->
-
-
-	</div><!-- /container -->
+    <div class="col-sm-6" style="background-color:pink;">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div> 
 	
 	
 	<!-- +++++ Footer Section +++++ -->
