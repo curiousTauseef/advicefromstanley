@@ -178,8 +178,17 @@
   <h1>Hello World!</h1>
   <div class="row">
     <div class="col-sm-6" style="background-color:yellow;">
-      <p>Lorem ipsum...</p>
-    </div>
+      
+				<p>SOF suggestion to display a FB login</p>
+
+
+				<fb:login-button scope="public_profile,email" data-scope="user_likes" data-max-rows="1" data-size="medium" onlogin="checkLoginState();">
+				</fb:login-button>
+
+				<div id="status">
+				</div>
+
+	</div> <!-- col end-->
     <div class="col-sm-6" style="background-color:pink;">
       <p>Sed ut perspiciatis...</p>
     </div>
