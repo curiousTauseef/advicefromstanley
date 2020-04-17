@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>GOLICO - Free Bootstrap Theme </title>
+    <title>STANLEY - Free Bootstrap Theme </title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -20,11 +20,7 @@
     <script src="assets/js/hover.zoom.js"></script>
     <script src="assets/js/hover.zoom.conf.js"></script>
 
-	<!-- https://www.w3schools.com/bootstrap/bootstrap_grid_basic.asp -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<!--<script src="assets/js/quoteEzioda.js"></script> -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -158,7 +154,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">GOLICO</a>
+          <a class="navbar-brand" href="index.html">STANLEY</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -173,7 +169,6 @@
 	
 	
 	<!-- +++++ Projects Section +++++ -->
-	
  <div class="container">
   <h1>Hello World!</h1>
   <div class="row">
@@ -187,14 +182,36 @@
 
 				<div id="status">
 				</div>
+				<!-- Now show the profile pic in the same column -->
 
-	</div> <!-- col end-->
+								<p>Display profile picture</p>
+				<button onClick="go()">Go</button>
+                                <div id="output"></div>
+
+
+			<script type="text/javascript">
+                          function go() {
+                          //const fileInput = document.getElementById('file');
+                          //const outputDiv = document.getElementById('output');
+
+                          FB.api('/me?fields=name,picture', function(response) {
+                      	  console.log("Fb response for pic");
+                            console.log(response);
+                            document.getElementById('output').innerHTML = ('<img src="' + response.picture.data.url + '"> ' + response.name);
+                          });
+
+                          //let html = '';
+                          //html += '<img src="images/' + file.name + '" />';
+                          //outputDiv.textContent = html;
+                        }
+			</script>
+
+	</div> <!-- col 1 end-->
     <div class="col-sm-6" style="background-color:pink;">
       <p>Sed ut perspiciatis...</p>
     </div>
   </div>
-</div> 
-	
+</div> 	
 	
 	<!-- +++++ Footer Section +++++ -->
 	
@@ -202,11 +219,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
-					<h4>My Location</h4>
+					<h4>My Bunker</h4>
 					<p>
-						Brouwersstraat 1B,<br/>
-						Leuven 3000, <br/>
-						Belgium.
+						Some Address 987,<br/>
+						+34 9054 5455, <br/>
+						Madrid, Spain.
 					</p>
 				</div><!-- /col-lg-4 -->
 				
@@ -220,7 +237,7 @@
 				</div><!-- /col-lg-4 -->
 				
 				<div class="col-lg-4">
-					<h4>About Golico</h4>
+					<h4>About Stanley</h4>
 					<p>This cute theme was created to showcase your work in a simple way. Use it wisely.</p>
 				</div><!-- /col-lg-4 -->
 			
@@ -233,8 +250,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-	<!-- use this in order to get three equal columns side by side -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	
+    <script src="assets/js/bootstrap.min.js"></script>
   </body>
 </html>
