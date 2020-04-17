@@ -219,9 +219,43 @@
 			</script>
 
 
-    </div>
-  </div>
-</div> 	
+    </div><!-- col 2 end-->
+
+	    <div class="col-sm-6" style="background-color:yellow;">
+     
+          <div class="panel panel-default">
+            <div class="panel-heading">Let's try to get simple details about you -  birthday and email information. </div>
+            <div class="panel-body">
+
+		  				<p>Display birthday and email of logged in user</p>
+				<div id="beResp" class="btn btn-success" style="padding-top: 20px">Click here to show bday and email info</div>
+                                <div id="biInfo"></div>
+                                <div id="emInfo"></div>
+
+
+<script>
+document.getElementById('beResp').onclick = function() {
+
+	<!-- Earlier I used Tauseef FB ID 2844230095628128 now using me   -->
+  FB.api('/me?fields=id,name,birthday,email', function(response) {
+    //Log.info('API response', response);
+
+                            console.log(response);
+                            document.getElementById('biInfo').innerHTML = response.birthday;
+                            document.getElementById('emInfo').innerHTML = response.email;
+  });
+}
+</script>
+
+				<!-- Panel Content ends -->
+	        </div>
+          </div>
+
+
+
+	</div> <!-- col 3 end-->
+  </div> <!-- End row div element here -->
+ </div> <!--End container div element here -->	
 	
 	<!-- +++++ Footer Section +++++ -->
 	
