@@ -52,11 +52,47 @@ $(function() {
 </script>
 
 
+<style>
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+/* The grid: Three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+}
 
+.containerTab {
+  padding: 20px;
+  color: white;
+}
 
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
+/* Closable button inside the container tab */
+.closebtn {
+  float: right;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -91,172 +127,62 @@ $(function() {
 	
 	
 	<!-- +++++ Projects Section +++++ -->
-	
-	<div class="container pt">
-		<div class="row mt">
-			<div class="col-lg-6 col-lg-offset-3 centered">
-				<h3>PROJECT NAME</h3>
-				<hr>
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-			</div>
-		</div>
 
 
-		<div>
-    <form id="signup">
-        <label for="name" class="label">Enter your name</label>
-        <input type="text" name="name" id="name" title="Required" class="required">&nbsp;
+<div style="text-align:center">
+  <h2>Expanding Grid</h2>
+  <p>Click on the boxes below:</p>
+</div>
 
-        <label for="theage" class="label">Enter your age</label>
-        <input type="text" name="theage" id="theage" title="Required" class="required digits">&nbsp;
+<!-- Three columns -->
+<div class="row">
+  <div class="column" onclick="openTab('b1');" style="background:green;">
+    Box 1
+  </div>
+  <div class="column" onclick="openTab('b2');" style="background:blue;">
+    Box 2
+  </div>
+  <div class="column" onclick="openTab('b3');" style="background:red;">
+    Box 3
+  </div>
+</div>
 
-        <label for="theemail" class="label">Enter your email</label>
-        <input type="text" name="theemail" id="theemail" title="Please enter a valid email address" class="required email">&nbsp;
+<!-- Full-width columns: (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background:green">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Box 1</h2>
+  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+</div>
 
-        <input type='submit' value='Submit' name="submit" id='submitme'>
-    </form>
+<div id="b2" class="containerTab" style="display:none;background:blue">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Box 2</h2>
+  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+</div>
 
-    <p> Your name: </p>
-    <p> Age: </p>
-    <p> Email: </p>
-    <p id="result"></p>
-		</div> 
+<div id="b3" class="containerTab" style="display:none;background:red">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Box 3</h2>
+  <p>Lorem ipsum dolor sit amet, te quo doctus abhorreant, et pri deleniti intellegat, te sanctus inermis ullamcorper nam. Ius error diceret deseruisse ad</p>
+</div>
 
-
-				<p>Lets verify gapi client first (with pure JS code)</p>
-
-				<script>
-// Let's load the JS Client library. I do it using a script tag, in the upper pane.
-// You could download it as a file and include in your project.
-
-
-// Verify that Google API JS Client library is loaded. 'gapi' is the Object created at
-// the global level. 
-console.log('Is gapi available', gapi !== undefined);
-console.log(gapi);
-
-// To begine interacting with any Google API, we need an API Key!
-
-var apiKey = 'zjW3zmGNnabVBn5hghYUrjEf';
-
-// With an API key, we can now perform requests. Yay!
-
-// Register the Api Key with the client library. The client library will use this key when making requests on your behalf.
-
-gapi.client.setApiKey(apiKey);
-
-// It's time to interact with the YouTube Api. The Google client JS library is meant to be used with all Google client Apis. So we need to load youtube API. We also can specify a version of the API. To do this, we will use gapi.client.load(). You can only load the library correctly, if your key is valid. Otherwise, a 400 Bad Request error is thrown.
-
-gapi.client.load('youtube', 'v3');
-
-//If no error is thrown, then we can observe the YouTube resources.
-console.log('Youtube API', gapi.client.youtube);
-
-// Wait, holdon. I see an undefined. The reaosn is an Asynchronous JavaScript call has been made to load the youtube api. When the call finishes. Then only we can see it. The load call gives us back a promise object. 
-
-var result = gapi.client.load('youtube', 'v3');
-console.log('Promise', result);
-
-// We can pass in a function to the then method. Like so.
-
-gapi.client.load('youtube', 'v3').then(function viewYoutubeResources(){  
-    console.log('Yay! Youtube API has loaded'); 
-
-});
-
-// Callbacks are supported as well.
-
-gapi.client.load('youtube', 'v3', function (){  
-    console.log('Callbacks are supported with the load function'); 
-
-});
-
-				</script>
-
-
-
-
-				<p>Code from https://developers.google.com/youtube/v3/code_samples/code_snippets?apix=true</p>
-
-
-<script src="https://apis.google.com/js/api.js"></script>
 <script>
-  /**
-   * Sample JavaScript code for youtube.channels.list
-   * See instructions for running APIs Explorer code samples locally:
-   * https://developers.google.com/explorer-help/guides/code_samples#javascript
-   */
-
-  function authenticate() {
-    return gapi.auth2.getAuthInstance()
-        .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
-        .then(function() { console.log("Sign-in successful"); },
-              function(err) { console.error("Error signing in", err); });
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
   }
-  function loadClient() {
-    gapi.client.setApiKey("zjW3zmGNnabVBn5hghYUrjEf");
-    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-        .then(function() { console.log("GAPI client loaded for API"); },
-              function(err) { console.error("Error loading GAPI client for API", err); });
-  }
-  // Make sure the client is loaded and sign-in is complete before calling this method.
-  function execute() {
-    return gapi.client.youtube.channels.list({
-      "part": "snippet,contentDetails,statistics",
-      "id": "UC_x5XG1OV2P6uZZ5FSM9Ttw"
-    })
-        .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              },
-              function(err) { console.error("Execute error", err); });
-  }
-  gapi.load("client:auth2", function() {
-    gapi.auth2.init({client_id: "944928787279-lv49qro0u1qn9dcah89u1ivrvuhu3rkp.apps.googleusercontent.com"});
-  });
+  document.getElementById(tabName).style.display = "block";
+}
 </script>
-<button onclick="authenticate().then(loadClient)">authorize and load</button>
-<button onclick="execute()">execute</button>
 
 
-				<p>Code for search from https://developers.google.com/youtube/v3/code_samples/code_snippets?apix=true</p>
 
 
-<script src="https://apis.google.com/js/api.js"></script>
-<script>
-  /**
-   * Sample JavaScript code for youtube.search.list
-   * See instructions for running APIs Explorer code samples locally:
-   * https://developers.google.com/explorer-help/guides/code_samples#javascript
-   */
 
-  function authenticateFrSrch() {
-    return gapi.auth2.getAuthInstance()
-        .signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
-        .then(function() { console.log("Sign-in successful"); },
-              function(err) { console.error("Error signing in", err); });
-  }
-  function loadClient() {
-    gapi.client.setApiKey("zjW3zmGNnabVBn5hghYUrjEf");
-    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-        .then(function() { console.log("GAPI client loaded for API"); },
-              function(err) { console.error("Error loading GAPI client for API", err); });
-  }
-  // Make sure the client is loaded and sign-in is complete before calling this method.
-  function executeFrSrch() {
-    return gapi.client.youtube.search.list({})
-        .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              },
-              function(err) { console.error("Execute error", err); });
-  }
-  gapi.load("client:auth2", function() {
-    gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
-  });
-</script>
-<button onclick="authenticateFrSrch().then(loadClient)">authorize and load</button>
-<button onclick="executeFrSrch()">execute</button>
+
+
 
 
 
