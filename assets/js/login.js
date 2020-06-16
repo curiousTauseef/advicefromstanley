@@ -4,7 +4,7 @@ function authenticate(form)
 {
   if(form.username.value=="smic" && form.password.value=="kappa123")//connect to a database
   {
-      location="continue.html";
+      location="loginsuccessContinue.html";
   }
   else
   {
