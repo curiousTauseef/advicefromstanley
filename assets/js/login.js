@@ -2,7 +2,7 @@ var tries = 5;
 
 function authenticate(form)
 {
-  if(form.username.value=="smic" && form.password.value=="kappa123")//connect to a database
+  if(form.username.value=="golico" && form.password.value=="golico123")//connect to a database
   {
       location="loginsuccessContinue.html";
   }
