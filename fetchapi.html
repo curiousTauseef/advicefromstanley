@@ -121,10 +121,10 @@
 
           //received an error on console
           //var plObj =  JSON.stringify(response);
-          console.log("Lets run the loop to extract titles:");         
-          for(var key in response){
-            if (response.hasOwnProperty(key)){
-                   var value=response[key];
+          console.log("Lets run the loop to extract titles from response.result:");         
+          for(var key in response.result){
+            if (response.result.hasOwnProperty(key)){
+                   var value=response.result[key];
                    // work with key and value
                    if (key === "title") {
                        neatList.push(value);
