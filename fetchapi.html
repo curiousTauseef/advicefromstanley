@@ -123,10 +123,12 @@
           //var plObj =  JSON.stringify(response);
           console.log("Lets run the loop to extract titles from response.result:");         
           for(var key in response.result){
+            console.log("Loop:key",key);
             if (response.result.hasOwnProperty(key)){
                    var value=response.result[key];
                    // work with key and value
                    if (key === "title") {
+                       consolel.log("Got a title now...Value is",value);
                        neatList.push(value);
                    }
                }
