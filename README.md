@@ -30,7 +30,9 @@ Exploring Public APIs :
 5. https://github.com/Marketo/REST-Sample-Code
 6. https://github.com/artur-stepien/wargaming-papi
 7. https://github.com/github/platform-samples
-8. 
+8. https://public-apis.io/taste-dive-api
+9. https://public-apis.io/good-reads-api
+10. https://public-apis.io/the-complete-node-js-course-by-moshfegh-hamedani
 
 GET and POST
 1. https://stackoverflow.com/questions/3477333/what-is-the-difference-between-post-and-get
@@ -65,8 +67,11 @@ JSON versus Javascript arrays and objects
 
 Notes
     * JSON is a data format (a string), Python dictionary is a data structure (in-memory object).If you need to exchange data between different (perhaps even  non-Python) processes then you could use JSON format to serialize your Python dictionary.
+
     * Text representation (a string) of an object is not the object itself (even string objects and their text representations are different things e.g., "\n" is a single newline character but obviously its text representation is several characters).
+
     * If you want to display a JSON content as visible HTML, you have to format it using HTML tags.
+
     * Once unserialized, "results from JSON responses" are plain ordinary python objects (usually dicts). And you append them to a list the same way you'd do for anything else.
 
 Understanding JS, JSON, GET, POST, XMLHttpRequest
@@ -76,6 +81,14 @@ Understanding JS, JSON, GET, POST, XMLHttpRequest
 
 Quotes from Forismatic
 1. Using Python - https://bitbucket.org/abasalyha/pyforismatic/src/default/forismatic/manager.py
+2. https://codepen.io/dting/pen/PqrZgb
+3. https://stackoverflow.com/questions/39197725/api-forismatic-json-random-quote-machine
+4. https://stackoverflow.com/questions/38910944/is-there-a-way-to-disable-ssl-tls-for-github-pages
+5. https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site
+6. https://stackoverflow.com/questions/47939548/github-pages-website-is-on-https-but-rest-api-is-on-http
+7. https://stackoverflow.com/questions/40827124/github-io-page-does-not-load-css
+8. https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/securing-your-github-pages-site-with-https
+9. https://github.com/gelmutdm/forismatic-client
 
 OAuth 2.0
 1. https://developers.google.com/identity/protocols/OAuth2UserAgent
@@ -98,5 +111,9 @@ OAuth 2.0
 18. https://developers.google.com/youtube/v3/code_samples/code_snippets
 19. https://stackoverflow.com/questions/18953499/youtube-api-to-fetch-all-videos-on-a-channel?rq=1
 
-
-
+Using Google Sheets App to send message from static page to google email
+1. https://www.youtube.com/watch?v=GMXFMVg5E4U
+2. https://blog.h-educate.com/how-to-send-an-email-in-a-static-html-page-using-google-sheets-scripts/
+3. https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.md
+4. https://purecss.io/start/
+5. https://stackoverflow.com/questions/23111233/sending-email-from-static-html-page

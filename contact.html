@@ -15,7 +15,11 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
+	<link href="assets/css/main.css" rel="stylesheet">
+	
+	<!-- styling based on pure css from https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.md -->
+    <link href="assets/css/pure-css-min.css" rel="stylesheet">
+
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/hover.zoom.js"></script>
@@ -60,28 +64,48 @@
 			<div class="col-lg-6 col-lg-offset-3 centered">
 				<h3>CONTACT ME</h3>
 				<hr>
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+				<p>If you like what I did here and want to get in touch, then use the simple form below to send me a message.</p>
 			</div>
 		</div>
 		<div class="row mt">	
 			<div class="col-lg-8 col-lg-offset-2">
-				<form role="form">
-				  <div class="form-group">
-				    <input type="name" class="form-control" id="NameInputEmail1" placeholder="Your Name">
-				    <br>
-				  </div>
-				  <div class="form-group">
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-				    <br>
-				  </div>
-				  <div class="form-group">
-				    <input type="email" class="form-control" id="subjectEmail1" placeholder="Subject">
-				    <br>
-				  </div>
-				  <textarea class="form-control" rows="6" placeholder="Enter your text here"></textarea>
-				    <br>
-				  <button type="submit" class="btn btn-success">SUBMIT</button>
-				</form>    			
+
+				<form id="gform" method="POST" class="pure-form pure-form-stacked" data-email="from_email@example.com"
+				action="https://script.google.com/macros/s/AKfycbzMGZw3xiRFxj47ewXEtG-gvJpGXJ-jynHmDgEF/exec">
+
+				<!--Each of your form elements must have a name attribute equal to that of your column name in the Google sheet-->
+					<label for="name">Name: </label>
+					<input id="name" name="tname" placeholder="What your Mom calls you" />	
+					<br>
+						
+					<label for="message">Message: </label>
+					<textarea id="message" name="tmessage" rows="10"
+								placeholder="Tell us what's on your mind..."></textarea>
+			
+					<br>
+			
+					<label for="email"><em>Your</em> Email Address:</label>
+					<input id="email" name="temail" type="email" value=""
+							required placeholder="your.name@email.com" />
+				
+			
+					<button class="button-success pure-button button-xlarge">
+						<i class="fa fa-paper-plane"></i>&nbsp;Send
+					</button>
+	  
+		  		</form>
+	  
+				<!-- Customise the Thankyou Message People See when they submit the form: -->
+				<div style="display:none;" id="thankyou_message">
+					<h2>
+						<em>Thanks</em> for contacting me!
+						I will get back to you soon!
+					</h2>
+				</div>
+	  
+				<!--https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.md-->
+				<script data-cfasync="false" type="text/javascript"
+						src="assets/js/form-submission-handler.js"></script>
 			</div>
 		</div><!-- /row -->
 	</div><!-- /container -->
