@@ -128,13 +128,22 @@
                    var value=response.result[key];
                    // work with key and value
                    if (key === "items") {
-                       console.log("Got a key of items now...Value is a list",value);
+                       console.log("Got a key of items now...Value is a array",value);
+                       //Lets use ES5
+                       value.forEach(function (item, index) {
+                        console.log(item, index);
+                        console.log('[%s] Title: %s', item.id, item.snippet.title);
+                        neatList.push(item.snippet.title);                   
+                       });
+
+                       /*
                        for(var i in value.length) {
                           var item = value[i];
                           console.log('[%s] Title: %s', item.id, item.snippet.title);
                           neatList.push(item.snippet.title);
 
                         }
+                        */
 
                    }
                }
