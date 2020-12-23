@@ -116,12 +116,13 @@
           //pre tells the browser engine that the content inside is pre-formatted and it can be displayed without any modification. So browser will not remove white spaces, new lines etc
           var neatList = [];
           //response is a JSON object (verified in console)
-          var plObj =  JSON.parse(response);
-          console.log("Lets see the parse function result to plObj",plObj);
+          //var plObj =  JSON.parse(response);
+          //console.log("Lets see the parse function result to plObj",plObj);
+
           //received an error on console
           //var plObj =  JSON.stringify(response);
-                   
-          for(var key in plObj){
+          console.log("Lets run the loop to extract titles:");         
+          for(var key in response){
             if (plObj.hasOwnProperty(key)){
                    var value=plObj[key];
                    // work with key and value
