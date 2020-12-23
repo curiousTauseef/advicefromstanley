@@ -66,6 +66,7 @@ JSON versus Javascript arrays and objects
 12. https://developers.google.com/youtube/v3/docs/search/list#examples
 
 Notes
+
     * JSON is a data format (a string), Python dictionary is a data structure (in-memory object).If you need to exchange data between different (perhaps even  non-Python) processes then you could use JSON format to serialize your Python dictionary.
 
     * Text representation (a string) of an object is not the object itself (even string objects and their text representations are different things e.g., "\n" is a single newline character but obviously its text representation is several characters).
@@ -117,3 +118,4 @@ Using Google Sheets App to send message from static page to google email
 3. https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.md
 4. https://purecss.io/start/
 5. https://stackoverflow.com/questions/23111233/sending-email-from-static-html-page
+6. https://dev.to/thisisabdus/securely-sending-emails-from-static-sites-with-a-3rd-party-api-304c
