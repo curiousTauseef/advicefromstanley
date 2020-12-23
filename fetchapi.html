@@ -128,8 +128,8 @@
                    var value=response.result[key];
                    // work with key and value
                    if (key === "items") {
-                       console.log("Got a key of items now...Value is",value);
-                       for(var i in len(value)) {
+                       console.log("Got a key of items now...Value is a list",value);
+                       for(var i in value.length) {
                           var item = value[i];
                           console.log('[%s] Title: %s', item.id, item.snippet.title);
                           neatList.push(item.snippet.title);
