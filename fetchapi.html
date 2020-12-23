@@ -123,8 +123,8 @@
           //var plObj =  JSON.stringify(response);
           console.log("Lets run the loop to extract titles:");         
           for(var key in response){
-            if (plObj.hasOwnProperty(key)){
-                   var value=plObj[key];
+            if (response.hasOwnProperty(key)){
+                   var value=response[key];
                    // work with key and value
                    if (key === "title") {
                        neatList.push(value);
