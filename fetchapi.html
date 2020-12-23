@@ -127,9 +127,15 @@
             if (response.result.hasOwnProperty(key)){
                    var value=response.result[key];
                    // work with key and value
-                   if (key === "title") {
-                       consolel.log("Got a title now...Value is",value);
-                       neatList.push(value);
+                   if (key === "items") {
+                       console.log("Got a key of items now...Value is",value);
+                       for(var i in len(value)) {
+                          var item = value[i];
+                          console.log('[%s] Title: %s', item.id, item.snippet.title);
+                          neatList.push(item.snippet.title);
+
+                        }
+
                    }
                }
           }
