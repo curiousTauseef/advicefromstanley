@@ -150,6 +150,24 @@
       });
     </script>
 
+<!--// https://api.jquery.com/jquery.getjson/#jsonp-->
+    <script>
+      $('#quoteGETJSON').click(function() {
+        $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?")
+          .done(update)
+          .fail(handleErr);
+    });
+
+    function update(response) {
+      $('#log').prepend('<pre>' + $('#response').html() + '</pre>');
+      $('#response').html(JSON.stringify(response));
+    }
+
+    function handleErr(jqxhr, textStatus, err) {
+      console.log("Request Failed: " + textStatus + ", " + err);
+    }
+    </script>
+
   </head>
 
   <body>
@@ -200,6 +218,13 @@
 				
         Enter message: <input type="text" id = "message">
 				<input type="submit" onclick="showMessage()" value="submit" />
+    </div>
+    <div>
+      <h1>Firstl, lets get a nice quote for the day</h1>
+      <button id='quoteGETJSON'>Lets get the quote getJSON. Do it nerdy way !</button>
+      <pre id="response"></pre>
+
+
     </div>
     <hr>
 					<p> Message is: <span id = "display_message"></span> </p>
