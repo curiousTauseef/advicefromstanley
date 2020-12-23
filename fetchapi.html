@@ -159,8 +159,8 @@
     });
 
     function update(response) {
-      $('#log').prepend('<pre>' + $('#response').html() + '</pre>');
-      $('#response').html(JSON.stringify(response));
+      //$('#log').prepend('<pre>' + $('#response').html() + '</pre>');
+      $('#quoteresponse').html(JSON.stringify(response));
     }
 
     function handleErr(jqxhr, textStatus, err) {
@@ -222,7 +222,7 @@
     <div>
       <h1>Firstl, lets get a nice quote for the day</h1>
       <button id='quoteGETJSON'>Lets get the quote getJSON. Do it nerdy way !</button>
-      <pre id="response"></pre>
+      <pre id="quoteresponse"></pre>
 
 
     </div>
