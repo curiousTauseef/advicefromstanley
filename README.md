@@ -49,6 +49,26 @@ Parsing JSON data
 4. https://programminghistorian.org/en/lessons/fetch-and-parse-data-with-openrefine#example-2-url-queries-and-parsing-json
 5. https://medium.com/@timothyrobards/understanding-json-in-javascript-5098876d0915
 
+JSON versus Javascript arrays and objects
+1. https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/
+2. https://www.taniarascia.com/how-to-use-json-data-with-php-or-javascript/
+3. https://www.datacamp.com/community/tutorials/json-data-python
+4. https://stackoverflow.com/questions/33169404/whats-the-difference-between-python-dictionary-and-json
+5. https://datacarpentry.org/python-socialsci/07-json/index.html
+6. https://jsonformatter.curiousconcept.com/#
+7. https://stackoverflow.com/questions/47011072/using-a-public-json-api-and-displaying-it-as-html
+8. https://stackoverflow.com/questions/2669690/why-does-google-prepend-while1-to-their-json-responses?rq=1
+9. https://developers.facebook.com/docs/graph-api/using-graph-api/#paging
+10. https://stackoverflow.com/questions/57768954/how-to-efficiently-paginate-through-youtube-json-response
+11. https://stackoverflow.com/questions/18804904/retrieve-all-videos-from-youtube-playlist-using-youtube-v3-api
+12. https://developers.google.com/youtube/v3/docs/search/list#examples
+
+Notes
+    * JSON is a data format (a string), Python dictionary is a data structure (in-memory object).If you need to exchange data between different (perhaps even  non-Python) processes then you could use JSON format to serialize your Python dictionary.
+    * Text representation (a string) of an object is not the object itself (even string objects and their text representations are different things e.g., "\n" is a single newline character but obviously its text representation is several characters).
+    * If you want to display a JSON content as visible HTML, you have to format it using HTML tags.
+    * Once unserialized, "results from JSON responses" are plain ordinary python objects (usually dicts). And you append them to a list the same way you'd do for anything else.
+
 Understanding JS, JSON, GET, POST, XMLHttpRequest
 1. https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/
 2. https://www.digitalocean.com/community/tutorials/introduction-to-the-dom
