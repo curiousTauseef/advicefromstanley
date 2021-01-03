@@ -26,6 +26,7 @@ GitHub API
 2. https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project
 3. https://towardsdatascience.com/github-user-insights-using-github-api-data-collection-and-analysis-5b7dca1ab214
 4. https://stackoverflow.com/questions/1947263/using-an-html-button-to-call-a-javascript-function
+5. https://stackoverflow.com/questions/15447889/display-html-form-values-in-same-page-after-submit
 
 Exploring Public APIs :
 1. https://dev.to/camerenisonfire/10-intriguing-public-rest-apis-for-your-next-project-2gbd

@@ -140,24 +140,6 @@
       });
     </script>
 
-<!--// https://api.jquery.com/jquery.getjson/#jsonp-->
-    <script>
-      $('#quoteGETJSON').click(function() {
-        $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?")
-          .done(update)
-          .fail(handleErr);
-    });
-
-    function update(response) {
-      //$('#log').prepend('<pre>' + $('#response').html() + '</pre>');
-      $('#quoteresponse').html(JSON.stringify(response));
-    }
-
-    function handleErr(jqxhr, textStatus, err) {
-      console.log("Request Failed: " + textStatus + ", " + err);
-    }
-    </script>
-
   </head>
 
   <body>
@@ -204,20 +186,14 @@
 -->
     <div>
       <h1>Getting Started With GitHub API</h1>
-			<p>Simple way to display html form values in same page after submit. [https://stackoverflow.com/questions/15447889/display-html-form-values-in-same-page-after-submit]</p>
+			<p>Lets use a technique to use HTML input to get the name of Github user. Then use XMLHttpRequest and GitHub API to get names of some repos of this user. [https://stackoverflow.com/questions/15447889/display-html-form-values-in-same-page-after-submit]</p>
 				
         Enter GitHub user name: <input type="text" id = "ghUser" placeholder="curiousTauseef">
 				<input type="submit" onclick="getRepos()" value="submit" />
     </div>
-    <div>
-      <h1>Firstl, lets get a nice quote for the day</h1>
-      <button id='quoteGETJSON'>Lets get the quote getJSON. Do it nerdy way !</button>
-      <pre id="quoteresponse"></pre>
-
-
-    </div>
+    
     <hr>
-					<p> Message is: <span id = "display_message"></span> </p>
+					<p> Your recent 30 GitHub repos will appear here: <span id = "display_message"></span> </p>
     <div>
         <h1>Parsing and printing key value pairs</h1>
 							<p>Using JS to parse a JSON and print key value pairs. see effect on console.[https://stackoverflow.com/questions/9138959/parsing-json-dictionary-in-javascript-to-iterate-through-keys]</p>
