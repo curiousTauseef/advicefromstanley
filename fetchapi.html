@@ -315,11 +315,24 @@
             
                 // Parse API data into JSON
                 const data = JSON.parse(this.response);
-                
+                    
                 // Log the response
                 console.log(data);
-                display_message.innerHTML= data;
 
+                console.log("Lets run the loop to extract names from response JSON:");    
+                var neatList = [];
+
+                data.forEach((element, index, array) => {
+                    console.log(element.name); // 100, 200, 300
+                    neatList.push(element.name);                   
+
+
+                    //console.log(index); // 0, 1, 2
+                    //console.log(array); // same myArray object 3 times
+                });
+                display_message.innerHTML= neatList;
+                //$('#pretty-Printed-Playlist-container').html('<pre>' + neatList + '</pre>');
+             
             
             }
             
@@ -327,9 +340,9 @@
             xhr.send();
             display_message.innerHTML= username;
 
-    }
+      }
 
-   </script>
+    </script>
 
     <!-- fetchUserDataBtn no longer used so comment loadin this JS-->
     <!--
