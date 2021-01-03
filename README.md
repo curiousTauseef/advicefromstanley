@@ -21,6 +21,11 @@ SOF
 4. https://stackoverflow.com/questions/45555869/calling-a-function-from-a-html-button
 5. 
 
+GitHub API
+1. https://codesnippet.io/github-api-tutorial/
+2. https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project
+3. https://towardsdatascience.com/github-user-insights-using-github-api-data-collection-and-analysis-5b7dca1ab214
+4. https://stackoverflow.com/questions/1947263/using-an-html-button-to-call-a-javascript-function
 
 Exploring Public APIs :
 1. https://dev.to/camerenisonfire/10-intriguing-public-rest-apis-for-your-next-project-2gbd
@@ -63,7 +68,8 @@ JSON versus Javascript arrays and objects
 9. https://developers.facebook.com/docs/graph-api/using-graph-api/#paging
 10. https://stackoverflow.com/questions/57768954/how-to-efficiently-paginate-through-youtube-json-response
 11. https://stackoverflow.com/questions/18804904/retrieve-all-videos-from-youtube-playlist-using-youtube-v3-api
-12. https://developers.google.com/youtube/v3/docs/search/list#examples
+12. https://developers.google.com/youtube/v3/docs/search/list#
+13. https://it.knightnet.org.uk/kb/node-js/looping/
 
 Notes
 
@@ -74,6 +80,25 @@ Notes
     * If you want to display a JSON content as visible HTML, you have to format it using HTML tags.
 
     * Once unserialized, "results from JSON responses" are plain ordinary python objects (usually dicts). And you append them to a list the same way you'd do for anything else.
+
+    * In javascript, every object has a bunch of built-in key-value pairs that have meta-information. When you loop through all the key-value pairs for an object you're looping through them too. hasOwnPropery() filters these out. Each object in javascript (actually a key-value pair) has a property called __proto__ or prototype. This property has a reference to its parent object. An object automatically inherits property from its parent. This is the reason of using hasOwnProperty, which signifies that we're interested in objects own property and not its parent ones.
+
+    * It's best to serve a WSGI app via a server like gunicorn or waitress, which will handle your concurrency needs, but almost no matter what you do for concurrency your global queue in memory will not work the way you want it to. You need to use an external memory store like memcached, redis, etc. Static data is one thing, but mutable state should never be shared between web app processes. That's contrary to Python web server idioms and the typical execution model of Python web apps.
+    
+    * Use Redis if you want fast CRUD access to an in-memory store. – Martin Konecny Jun 29 '14 at 6:04
+
+
+ECMAScript Info
+1. https://it.knightnet.org.uk/kb/node-js/javascript-node-versions/
+
+Multithreaded Web Apps
+1. https://stackoverflow.com/questions/24473377/enable-multithreading-of-my-web-app-using-python-bottle-framework/24473886#24473886
+2. https://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html
+
+Payment APIs
+1. https://www.braintreepayments.com/be
+2. https://stackoverflow.com/questions/25501009/transfer-fund-from-a-merchant-account-to-a-credit-debit-card-holder-bank-probab/25528440#25528440
+3. https://stackoverflow.com/questions/46488503/paypal-rest-api-payment-or-braintree-payments?rq=1
 
 Understanding JS, JSON, GET, POST, XMLHttpRequest
 1. https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/
@@ -118,4 +143,8 @@ Using Google Sheets App to send message from static page to google email
 3. https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.md
 4. https://purecss.io/start/
 5. https://stackoverflow.com/questions/23111233/sending-email-from-static-html-page
-6. https://dev.to/thisisabdus/securely-sending-emails-from-static-sites-with-a-3rd-party-api-304c
+6. https://dev.to/thisisabdus/securely-sending-emails-from-static-sites-with-a-3rd-party-api-
+7. https://dan.lousqui.fr/build-an-email-sender-form-for-a-static-website.html
+8. https://parseplatform.org/
+9. https://discourse.gohugo.io/t/build-a-rest-api-to-send-emails-from-a-contact-form/13000
+10. https://html5boilerplate.com/

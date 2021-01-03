@@ -192,7 +192,7 @@
 			<div class="col-lg-6 col-lg-offset-3 centered">
 				<h3>PROJECT NAME</h3>
 				<hr>
-        <p>On this webpage, I will show you two applications using public APIs from GitHub API and YouTube API.</p>
+        <p>On this webpage, I try to use YouTube API to display the playlists of my YouTube account.</p>
 
 <!--
     <div>
@@ -203,11 +203,11 @@
     <div id="response"></div>
 -->
     <div>
-      <h1>Getting Started With GitHub API</h1>
+      <h1>Getting Started With Fetch API</h1>
 			<p>Simple way to display html form values in same page after submit. [https://stackoverflow.com/questions/15447889/display-html-form-values-in-same-page-after-submit]</p>
 				
-        Enter GitHub user name: <input type="text" id = "ghUser" placeholder="curiousTauseef">
-				<input type="submit" onclick="getRepos()" value="submit" />
+        Enter message: <input type="text" id = "message">
+				<input type="submit" onclick="showMessage()" value="submit" />
     </div>
     <div>
       <h1>Firstl, lets get a nice quote for the day</h1>
@@ -296,37 +296,9 @@
       https://stackoverflow.com/questions/13885533/it-says-that-typeerror-document-getelementbyid-is-null
     -->
     <script type="text/JavaScript">
-      function getRepos(){
-           var username = document.getElementById("ghUser").value;
-
-            // Create new XMLHttpRequest object
-            const xhr = new XMLHttpRequest();
-            
-            // GitHub endpoint, dynamically passing in specified username
-            const url = `https://api.github.com/users/${username}/repos`;
-            
-            // Open a new connection, using a GET request via URL endpoint
-            // Providing 3 arguments (GET/POST, The URL, Async True/False)
-            xhr.open('GET', url, true);
-            
-            // When request is received
-            // Process it here
-            xhr.onload = function() {
-            
-                // Parse API data into JSON
-                const data = JSON.parse(this.response);
-                
-                // Log the response
-                console.log(data);
-                display_message.innerHTML= data;
-
-            
-            }
-            
-            // Send the request to the server
-            xhr.send();
-            display_message.innerHTML= username;
-
+      function showMessage(){
+           var message = document.getElementById("message").value;
+           display_message.innerHTML= message;
     }
 
    </script>
